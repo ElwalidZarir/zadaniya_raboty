@@ -1,47 +1,47 @@
 body {
   background-color: #1b191c;
 }
-.lfog {
+.header {
   display: grid;
   grid-template-columns: 1fr 1fr;
   background-color: #eeeeee;
   height: 400px;
 }
 
-.titles_lawlin {
+.header_titles {
   display: grid;
   grid-template-rows: max-content;
   margin: 20px 50px;
 }
 
-.titles_lawlin h1 {
+.header_titles h1 {
   font-family: "Space Grotesk";
   font-style: normal;
   font-weight: 400;
   font-size: 48px;
 }
 
-.ltext_lakhar {
+.seconde_title {
   margin-top: 25spx;
 }
 
-.lblassa_lmohima {
+.right_side {
   display: grid;
   grid-template-rows: min-content;
   margin-top: 50px;
 }
 
-.lblassa_lmohima h3 {
+.right_side h3 {
   font-weight: 400;
   font-size: 24px;
 }
 
-.titles_lawlin h4 {
+.header_titles h4 {
   font-weight: 300;
   font-size: 24px;
 }
 
-.ltext_lakhar h6 {
+.seconde_title h6 {
   font-weight: 300;
   font-size: 12px;
 }
@@ -90,7 +90,7 @@ body {
   height: 160px;
 }
 
-.text_khor {
+.text_two {
   color: #eeeeee;
 }
 
@@ -98,7 +98,7 @@ body {
   color: #eeeeee;
 }
 
-.lta7t {
+.body {
   display: grid;
   grid-template-columns: 1fr 2fr;
 }
