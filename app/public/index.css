@@ -1,0 +1,108 @@
+body {
+  background-color: #1b191c;
+}
+.lfog {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: #eeeeee;
+  height: 400px;
+}
+
+.titles_lawlin {
+  display: grid;
+  grid-template-rows: max-content;
+  margin: 20px 50px;
+}
+
+.titles_lawlin h1 {
+  font-family: "Space Grotesk";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 48px;
+}
+
+.ltext_lakhar {
+  margin-top: 25spx;
+}
+
+.lblassa_lmohima {
+  display: grid;
+  grid-template-rows: min-content;
+  margin-top: 50px;
+}
+
+.lblassa_lmohima h3 {
+  font-weight: 400;
+  font-size: 24px;
+}
+
+.titles_lawlin h4 {
+  font-weight: 300;
+  font-size: 24px;
+}
+
+.ltext_lakhar h6 {
+  font-weight: 300;
+  font-size: 12px;
+}
+
+.link_text,
+.btn_form {
+  float: left;
+}
+
+#root {
+  position: relative;
+  width: 75%;
+}
+
+.link_text {
+  float: left;
+  box-sizing: border-box;
+  padding-right: 80px;
+  width: 100%;
+  height: 80px;
+  border: none;
+  font-size: 24px;
+}
+
+.btn_form {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 96px;
+  height: 80px;
+  background: #f8d231;
+  border: none;
+}
+
+.title_one {
+  color: #eeeeee;
+}
+
+.text {
+  color: #eeeeee;
+  font-weight: 300;
+  font-size: 24px;
+  letter-spacing: -0.4px;
+
+  width: 672px;
+  height: 160px;
+}
+
+.text_khor {
+  color: #eeeeee;
+}
+
+.title_two {
+  color: #eeeeee;
+}
+
+.lta7t {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+.left_side {
+  margin: 45px;
+}
