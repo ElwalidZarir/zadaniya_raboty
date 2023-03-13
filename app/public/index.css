@@ -48,12 +48,14 @@ body {
 
 .link_text,
 .btn_form {
-  float: left;
 }
 
 #root {
-  position: relative;
-  width: 75%;
+  width: 90%;
+}
+
+.form {
+  display: flex;
 }
 
 .link_text {
@@ -67,9 +69,6 @@ body {
 }
 
 .btn_form {
-  position: absolute;
-  top: 0;
-  right: 0;
   width: 96px;
   height: 80px;
   background: #f8d231;
@@ -105,4 +104,8 @@ body {
 
 .left_side {
   margin: 45px;
+}
+
+.invalid input {
+  content: "!";
 }

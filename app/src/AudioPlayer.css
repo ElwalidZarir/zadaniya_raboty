@@ -4,7 +4,7 @@
   grid-template-rows: 1fr 1fr;
   justify-content: flex-start;
   padding: 5%;
-  width: 100%;
+  width: 60%;
 }
 
 .playPause {
@@ -30,5 +30,4 @@
 
 #slider {
   width: 100%;
-  
 }
