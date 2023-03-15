@@ -1,31 +1,39 @@
 .audioPlayer {
   background: #cfd3d6;
-  display: grid;
-  grid-template-rows: 1fr 1fr;
-  justify-content: flex-start;
-  padding: 5%;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  flex-flow: column wrap;
+  justify-content: space-between;
   width: 60%;
+  padding: 1.5%;
 }
 
 .playPause {
   background: transparent;
   border: none;
   color: #f0f8ff;
-  justify-self: start;
-  align-self: center;
-  padding-bottom: 15px;
-  padding-right: 20px;
+  align-self: flex-start;
   cursor: pointer;
+  flex-grow: 5;
 }
 
-.playPause FaPause {
-}
-
-.input_range::-webkit-slider-thumb {
+.input_range {
   width: 100%;
+
   cursor: pointer;
   --seek-before-width: 0;
+  background: transparent;
   /* Hides the slider so custom styles can be added */
+}
+
+.input_range::-webkit-slider-runnable-track {
+  background: white;
+  border-radius: 25px;
+}
+
+.input_range::-ms-thumb {
+  background: black;
 }
 
 #slider {

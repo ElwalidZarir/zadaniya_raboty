@@ -1,11 +1,9 @@
 import React, { useState, useRef, useEffect } from "react";
-import { songsdata } from "./audio";
 import "./AudioPlayer.css";
 import { FaPlay } from "react-icons/fa";
 import { FaPause } from "react-icons/fa";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
-const AudioPlayer = () => {
+const AudioPlayer = ({ url }) => {
   const [isPlaying, setIsplaying] = useState(false);
   const [duration, setDuration] = useState(0);
   const [currentTime, setCurrenTime] = useState(0);
@@ -14,9 +12,8 @@ const AudioPlayer = () => {
   const animationRef = useRef();
 
   const togglePlayPause = (e) => {
-    const preValue = isPlaying;
-    setIsplaying(!preValue);
-    if (!preValue) {
+    setIsplaying(!isPlaying);
+    if (isPlaying) {
       audioPlayer.current.play();
       animationRef.current = requestAnimationFrame(whilePlaying);
     } else {
@@ -34,6 +31,16 @@ const AudioPlayer = () => {
     setCurrenTime(progressBar.current.value);
     animationRef.current = requestAnimationFrame(whilePlaying);
   };
+
+  useEffect(() => {
+    if (isPlaying) {
+      audioPlayer.current.play();
+      animationRef.current = requestAnimationFrame(whilePlaying);
+    } else {
+      audioPlayer.current.pause();
+      cancelAnimationFrame(animationRef.current);
+    }
+  }, [isPlaying]);
 
   useEffect(() => {
     const seconds = Math.floor(audioPlayer.current.duration);
@@ -60,9 +67,9 @@ const AudioPlayer = () => {
 
   return (
     <div className="audioPlayer">
-      <audio ref={audioPlayer} src={songsdata[0].url}></audio>
+      <audio ref={audioPlayer} src={url}></audio>
       <button className="playPause" onClick={togglePlayPause}>
-        {isPlaying ? <FaPause /> : <FaPlay />}
+        {isPlaying ? <FaPause size={20} /> : <FaPlay size={20} />}
       </button>
       <div className="input_range">
         <input

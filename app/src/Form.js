@@ -1,23 +1,17 @@
 import React, { useState } from "react";
 import AudioPlayer from "./AudioPlayer";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { songsdata } from "./audio";
+import { AiOutlineArrowRight } from "react-icons/ai";
 
 const Form = () => {
   const [url, setUrl] = useState("");
   const [error, setError] = useState(false);
-  const [flag, setFlag] = useState(false);
+  const [showPlayer, setShowplayer] = useState(false);
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (songsdata.some((element) => element.url === url)) {
-      setError(false);
-      console.log("sx");
-      setFlag(true);
-    } else {
-      console.log("cdk");
-      setError(true);
-    }
+    let found = songsdata.some((element) => element.url === url);
+    setError(!found);
   };
 
   function style(error) {
@@ -32,16 +26,16 @@ const Form = () => {
     setUrl(event.target.value);
   };
 
-  const toggleButton = (event) => {
-    if (songsdata.some((element) => element.url === url)) {
-      setFlag(true);
+  const toggleButton = () => {
+    if (songsdata.some((audio) => audio.url === url)) {
+      setShowplayer(true);
     }
   };
 
   return (
     <>
-      {flag ? (
-        <AudioPlayer />
+      {showPlayer ? (
+        <AudioPlayer url={url} />
       ) : (
         <div>
           <form className="form" onSubmit={handleSubmit}>
@@ -62,7 +56,7 @@ const Form = () => {
             </div>
 
             <button onClick={toggleButton} className="btn_form">
-              Click
+              <AiOutlineArrowRight size={30} />
             </button>
           </form>
         </div>
